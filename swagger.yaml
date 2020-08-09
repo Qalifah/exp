@@ -1,0 +1,43 @@
+basePath: /
+consumes:
+- application/json
+host: some-url.com
+info:
+  description: Documentation of our exp API.
+  title: exp.
+  version: 1.0.0
+paths:
+  /login:
+    post:
+      operationId: login
+      responses:
+        "200": {}
+      summary: Verify if the user is known or not.
+      tags:
+      - user
+  /logout:
+    post:
+      operationId: logout
+      responses:
+        "200": {}
+      summary: Let's log the user out!.
+      tags:
+      - user
+  /register:
+    post:
+      operationId: register
+      responses:
+        "200": {}
+      summary: Signing up as a user.
+      tags:
+      - users
+produces:
+- application/json
+schemes:
+- http
+securityDefinitions:
+  bearer:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
